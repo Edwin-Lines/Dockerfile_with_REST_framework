@@ -1,6 +1,8 @@
 pipeline{
     agent any
-
+    environment {
+        RAMA = ''
+    }
     stages{
         stage('get GitUrl'){
             steps{
