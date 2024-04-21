@@ -6,7 +6,7 @@ pipeline{
 
         stage('get GitUrl'){
             steps{
-                echo ${GIT_URL}
+                echo '${GIT_URL}'
             }
         }
 
