@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sh 'npm install'
                 echo 'building...'
-                sh "RAMA=$(echo ${GIT_BRANCH} | cut -b 8-14 | tr '[:upper:]' '[:lower:]' | tr '/' '_')"
+                sh "RAMA=\$(echo ${GIT_BRANCH} | cut -b 8-14 | tr '[:upper:]' '[:lower:]' | tr '/' '_')"
                 sh 'sudo docker build -t sicei-${GIT_BRANCH}:1.0.0-${BUILD_NUMBER} .'
             }
         }
