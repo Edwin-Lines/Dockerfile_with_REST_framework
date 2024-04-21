@@ -15,7 +15,7 @@ pipeline{
                 sh 'npm install'
                 echo 'building...'
                 script{
-                    def RAMA = sh(script: 'echo $GIT_BRANCH | cut -b 8-14 | tr "[:upper:]" "[:lower:]" | tr "/" "_"', returnStdout: true).trim()
+                    RAMA = sh(script: 'echo $GIT_BRANCH | cut -b 8-14 | tr "[:upper:]" "[:lower:]" | tr "/" "_"', returnStdout: true).trim()
                     echo "RAMA value: ${RAMA}"
                 }
                 sh "sudo docker build -t sicei-${RAMA}:1.0.0-${BUILD_NUMBER} ."
